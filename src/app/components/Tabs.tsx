@@ -6,6 +6,7 @@ interface TabsProps {
   tabs: string[];
   children: React.ReactNode[];
   color?: "purple" | "green" | "pink" | "blue" | "yellow";
+  extraAction?: React.ReactNode;
 }
 
 const colorMap = {
@@ -16,13 +17,13 @@ const colorMap = {
   yellow: { active: "bg-yellow-soft text-yellow-dark border-yellow-light", shadow: "var(--yellow-light)", border: "var(--yellow-light)" },
 };
 
-export default function Tabs({ tabs, children, color = "purple" }: TabsProps) {
+export default function Tabs({ tabs, children, color = "purple", extraAction }: TabsProps) {
   const [active, setActive] = useState(0);
   const c = colorMap[color];
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap gap-4">
+      <div className="mb-8 flex flex-wrap items-center gap-4">
         {tabs.map((tab, i) => (
           <button
             key={tab}
@@ -37,6 +38,7 @@ export default function Tabs({ tabs, children, color = "purple" }: TabsProps) {
             {tab}
           </button>
         ))}
+        {extraAction && <div className="ml-auto">{extraAction}</div>}
       </div>
       <div>{children[active]}</div>
     </div>

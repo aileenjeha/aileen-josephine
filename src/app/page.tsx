@@ -201,27 +201,20 @@ export default function Home() {
               <div className="p-8 md:p-10">
                 <p className="mb-4 text-base leading-[1.9] text-text-secondary">
                   With a strong passion for{" "}
-                  <strong className="text-purple">
+                  <strong className="text-purple-dark">
                     digital product design
                   </strong>
-                  , I’ve worked on various{" "}
-                  <strong className="text-purple">
-                    mobile and web projects
-                  </strong>
-                  , creating{" "}
-                  <strong className="text-purple">
+                  , I’ve worked on various mobile and web projects, creating{" "}
+                  <strong className="text-purple-dark">
                     user-centered solutions
                   </strong>{" "}
                   that are both engaging and functional. My process is rooted in{" "}
-                  <strong className="text-purple">
+                  <strong className="text-purple-dark">
                     empathy, research, and iteration
                   </strong>{" "}
-                  to turn complex problems into{" "}
-                  <strong className="text-purple">seamless experiences</strong>.
-                  As a third-year{" "}
-                  <strong className="text-purple">Information Systems</strong>{" "}
-                  student, I continuously grow by applying my knowledge to{" "}
-                  <strong className="text-purple">
+                  to turn complex problems into seamless experiences.
+                  As a third-year Information Systems student, I continuously grow by applying my knowledge to{" "}
+                  <strong className="text-purple-dark">
                     real-world design challenges
                   </strong>
                   .
@@ -306,6 +299,17 @@ export default function Home() {
               "Graphic Design",
             ]}
             color="blue"
+            extraAction={
+              <a
+                href="https://drive.google.com/file/d/1u2DaQrLNqHahChN8bGh4IOtGJaWK4roL/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-btn rounded-full border-2 border-gray-300 bg-white px-5 py-2.5 text-sm font-bold text-foreground transition-all duration-200"
+                style={{ boxShadow: "3px 3px 0 #d1d5db", fontFamily: "var(--font-figtree)" }}
+              >
+                <span className="inline-flex items-center gap-2">View Detailed Portfolio <img src="/ArrowSquareOut.svg" alt="" className="h-[18px] w-[18px] -translate-y-[1px]" /></span>
+              </a>
+            }
           >
             {/* Case Studies */}
             <div className="space-y-6">
@@ -676,7 +680,8 @@ export default function Home() {
             color="pink"
           >
             {/* Career — timeline style with connecting line */}
-            <div className="relative space-y-8 pl-8 before:absolute before:left-[11px] before:top-4 before:h-[calc(100%-32px)] before:w-[3px] before:rounded-full before:bg-gradient-to-b before:from-green before:via-pink before:to-purple md:pl-10 before:md:left-[13px]">
+            <div className="relative space-y-8 pl-12 md:pl-14">
+              <div className="absolute left-[11px] top-4 h-[calc(100%-16px)] w-[3px] rounded-full md:left-[13px]" style={{ background: "linear-gradient(to bottom, var(--green) 0%, var(--green) 40%, var(--pink) 75%, var(--pink) 100%)" }} />
               {[
                 {
                   company: "PT Paragon Technology",
@@ -715,10 +720,10 @@ export default function Home() {
                     "Involved in the interface design for Praisindo's Wealth Management System, supporting investment portfolio management, and contributed to designing its centralized design system to streamline design processes and maintain consistency.",
                   ],
                 },
-              ].map((item) => (
+              ].map((item, idx) => (
                 <div key={item.company} className="relative">
                   <div
-                    className={`absolute -left-8 top-6 h-6 w-6 rounded-full border-[3px] border-white ${item.dotColor} md:-left-10`}
+                    className={`absolute -left-7 h-6 w-6 rounded-full border-[3px] border-white ${item.dotColor} md:-left-13.5 ${idx === 0 ? "top-3" : "top-4"}`}
                     style={{ boxShadow: "0 0 0 2px var(--purple-light)" }}
                   />
                   <Card color={item.color}>
@@ -1109,10 +1114,11 @@ export default function Home() {
         >
           <div className="relative overflow-hidden p-10 text-center md:p-20">
             {/* Pastel blurs */}
-            <div className="pointer-events-none absolute -left-20 -top-20 h-[300px] w-[300px] rounded-full bg-blue-light opacity-40 blur-[100px]" />
-            <div className="pointer-events-none absolute -right-20 top-[10%] h-[250px] w-[250px] rounded-full bg-pink-light opacity-35 blur-[100px]" />
-            <div className="pointer-events-none absolute left-[30%] -bottom-20 h-[280px] w-[280px] rounded-full bg-green-light opacity-30 blur-[100px]" />
-            <div className="pointer-events-none absolute right-[20%] top-[5%] h-[200px] w-[200px] rounded-full bg-purple-light opacity-30 blur-[90px]" />
+            <div className="pointer-events-none absolute -left-20 -top-20 h-[300px] w-[300px] rounded-full bg-blue-light opacity-60 blur-[100px]" />
+            <div className="pointer-events-none absolute -right-20 top-[10%] h-[250px] w-[250px] rounded-full bg-pink-light opacity-55 blur-[100px]" />
+            <div className="pointer-events-none absolute left-[30%] -bottom-20 h-[280px] w-[280px] rounded-full bg-green-light opacity-50 blur-[100px]" />
+            <div className="pointer-events-none absolute right-[20%] top-[5%] h-[200px] w-[200px] rounded-full bg-purple-light opacity-50 blur-[90px]" />
+            <div className="pointer-events-none absolute left-[50%] bottom-[10%] h-[250px] w-[250px] rounded-full bg-yellow-light opacity-50 blur-[100px]" />
             <div className="relative z-10">
               <SectionTag color="green">Get in Touch</SectionTag>
               <h2
@@ -1176,49 +1182,65 @@ export default function Home() {
       </section>
 
       {/* ━━━ FOOTER ━━━ */}
-      <footer className="relative bg-blue-soft">
-        <div className="mx-auto max-w-5xl px-10 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p
-            className="text-sm font-semibold text-text-secondary"
-            style={{ fontFamily: "var(--font-figtree)" }}
-          >
-            &copy; 2025 Aileen Josephine Halim
-          </p>
-          <div className="flex items-center gap-5 text-sm font-semibold text-text-secondary">
-            {[
-              { label: "About", href: "#about" },
-              { label: "Works", href: "#projects" },
-              { label: "Experiences", href: "#experience" },
-              { label: "Contact", href: "#contact" },
-            ].map((l) => (
+      <footer className="bg-blue-soft">
+        <div className="mx-auto max-w-5xl px-10 pt-12 pb-14">
+          {/* Top row — branding left, socials right */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full border-2 border-blue-light overflow-hidden flex-shrink-0">
+                <img src="/foto-1.png" alt="Aileen" className="h-full w-full object-cover scale-[2]" style={{ objectPosition: "20% 1%" }} />
+              </div>
+              <div>
+                <p className="text-base font-bold text-blue" style={{ fontFamily: "var(--font-figtree)" }}>
+                  Aileen Josephine Halim
+                </p>
+                <p className="text-xs text-text-secondary">UI/UX Designer</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
               <a
-                key={l.label}
-                href={l.href}
-                className="transition-colors hover:text-blue"
+                href="mailto:aileenjeha@gmail.com"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-blue border-2 border-blue-light transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                style={{ boxShadow: "3px 3px 0 var(--blue-light)" }}
+                aria-label="Email"
               >
-                {l.label}
+                <IconMail />
               </a>
-            ))}
+              <a
+                href="https://www.linkedin.com/in/aileen-josephine-halim/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-blue border-2 border-blue-light transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                style={{ boxShadow: "3px 3px 0 var(--blue-light)" }}
+                aria-label="LinkedIn"
+              >
+                <IconLinkedin />
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="mailto:aileenjeha@gmail.com"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-blue border-2 border-blue-light transition-all hover:translate-x-[-1px] hover:translate-y-[-1px]"
-              style={{ boxShadow: "2px 2px 0 var(--blue-light)" }}
-              aria-label="Email"
-            >
-              <IconMail />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aileen-josephine-halim/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-blue border-2 border-blue-light transition-all hover:translate-x-[-1px] hover:translate-y-[-1px]"
-              style={{ boxShadow: "2px 2px 0 var(--blue-light)" }}
-              aria-label="LinkedIn"
-            >
-              <IconLinkedin />
-            </a>
+
+          {/* Bottom row — nav links */}
+          <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-center gap-6">
+              {[
+                { label: "Works", href: "#projects" },
+                { label: "About", href: "#about" },
+                { label: "Experience", href: "#experience" },
+                { label: "Contact", href: "#contact" },
+              ].map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="text-sm text-text-muted transition-colors hover:text-blue"
+                  style={{ fontFamily: "var(--font-figtree)" }}
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+            <p className="text-sm text-text-muted" style={{ fontFamily: "var(--font-figtree)" }}>
+              &copy; 2026 Aileen Josephine Halim
+            </p>
           </div>
         </div>
       </footer>
