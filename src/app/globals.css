@@ -149,15 +149,15 @@ body {
   padding: 14px 32px;
   transition: all 0.2s ease;
   font-family: var(--font-figtree);
-  box-shadow: 4px 4px 0 rgb(101, 133, 192) !important;
+  box-shadow: 4px 4px 0 #A5B8E0 !important;
 }
 .btn-primary:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #3A5280 !important;
+  box-shadow: 6px 6px 0 #6685C0 !important;
 }
 .btn-primary:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 #3A5280 !important;
+  box-shadow: 1px 1px 0 #6685C0 !important;
 }
 
 .btn-outline {
@@ -202,6 +202,13 @@ body {
   100% { transform: translateX(-50%); }
 }
 .marquee { animation: marquee 25s linear infinite; }
+
+/* ═══ Hero Photo Strip ═══ */
+@keyframes hero-photo-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.hero-photo-strip { animation: hero-photo-scroll 30s linear infinite; }
 
 /* ═══ Animations ═══ */
 @keyframes float {

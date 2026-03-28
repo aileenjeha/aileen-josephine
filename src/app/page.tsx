@@ -82,17 +82,17 @@ export default function Home() {
       {/* ━━━ HERO ━━━ */}
       <section
         id="hero"
-        className="relative min-h-screen overflow-hidden bg-background"
+        className="relative flex min-h-screen flex-col overflow-hidden bg-background"
       >
 
         {/* Pastel blurs */}
-        <div className="pointer-events-none absolute -left-32 -top-20 h-[500px] w-[500px] rounded-full bg-blue-light opacity-50 blur-[120px]" />
-        <div className="pointer-events-none absolute -right-40 top-[5%] h-[450px] w-[450px] rounded-full bg-green-light opacity-40 blur-[120px]" />
-        <div className="pointer-events-none absolute left-[20%] bottom-[-10%] h-[400px] w-[400px] rounded-full bg-pink-light opacity-40 blur-[120px]" />
-        <div className="pointer-events-none absolute right-[10%] bottom-[0%] h-[350px] w-[350px] rounded-full bg-yellow-light opacity-35 blur-[100px]" />
-        <div className="pointer-events-none absolute left-[45%] top-[10%] h-[300px] w-[300px] rounded-full bg-purple-light opacity-35 blur-[100px]" />
+        <div className="pointer-events-none absolute -left-32 -top-20 h-[500px] w-[500px] rounded-full bg-blue-light opacity-70 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 top-[5%] h-[450px] w-[450px] rounded-full bg-green-light opacity-60 blur-[120px]" />
+        <div className="pointer-events-none absolute left-[20%] bottom-[-10%] h-[400px] w-[400px] rounded-full bg-pink-light opacity-60 blur-[120px]" />
+        <div className="pointer-events-none absolute right-[10%] bottom-[0%] h-[350px] w-[350px] rounded-full bg-yellow-light opacity-55 blur-[100px]" />
+        <div className="pointer-events-none absolute left-[45%] top-[10%] h-[300px] w-[300px] rounded-full bg-purple-light opacity-55 blur-[100px]" />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-10 py-24">
+        <div className="relative z-10 mx-auto flex flex-1 max-w-5xl flex-col items-center justify-start px-10 pt-32 pb-4">
           <div className="chip-glow relative mb-10 inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-bold text-white">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-soft opacity-75" />
@@ -104,7 +104,7 @@ export default function Home() {
             className="text-blue text-center leading-[1.05] mb-6"
             style={{
               fontFamily: "var(--font-biscuitos)",
-              fontSize: "clamp(64px, 10vw, 90px)",
+              fontSize: "clamp(72px, 12vw, 90px)",
             }}
           >
             Aileen Josephine Halim
@@ -123,13 +123,13 @@ export default function Home() {
             real-world problems.
           </p>
 
-          <div className="flex flex-wrap gap-4 items-center justify-center">
+          <div className="flex flex-wrap gap-7 items-center justify-center">
             <a
               href="https://drive.google.com/file/d/1PLbH62u2pYge5vUQxi_zfxW_NfLU8gWQ/view"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2 text-base"
-              style={{ boxShadow: "4px 4px 0 #5375B8" }}
+              style={{ background: "#D4DFEF", color: "#2D2448", borderColor: "#A5B8E0" }}
             >
               My Resume
             </a>
@@ -141,45 +141,45 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* Photo strip */}
+        <div className="relative z-10 mt-auto w-full overflow-hidden pb-3 pt-2">
+          <div className="hero-photo-strip flex w-max gap-5">
+            {[...Array(2)].map((_, setIdx) => (
+              <div key={setIdx} className="flex gap-5">
+                {[
+                  "/ui-1.png",
+                  "/paragon-1.png",
+                  "/ristek-1.png",
+                  "/ui-3.png",
+                  "/paragon-2.png",
+                  "/ui-5.png",
+                  "/ristek-3.png",
+                  "/ui-7.png",
+                  "/paragon-3.png",
+                  "/ui-9.png",
+                ].map((src, i) => (
+                  <div
+                    key={i}
+                    className="h-[250px] w-[370px] flex-shrink-0 overflow-hidden rounded-2xl border-2 border-blue-light"
+                    style={{ boxShadow: "5px 5px 0 var(--blue-light)" }}
+                  >
+                    <img
+                      src={src}
+                      alt={`Journey photo ${i + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* ━━━ MARQUEE ━━━ */}
-      <div className="relative z-10 overflow-hidden bg-blue-soft py-4 border-y-[2.5px] border-blue-light">
-        <div className="marquee flex w-max items-center gap-8 whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <span
-              key={i}
-              className="flex items-center gap-7 text-sm font-bold tracking-wider text-blue-dark"
-            >
-              <span>UI/UX DESIGN</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>DESIGN SYSTEMS</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>PROTOTYPING</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>USER RESEARCH</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>FIGMA</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>WIREFRAMING</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>INTERACTION DESIGN</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>USABILITY TESTING</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>ADOBE PHOTOSHOP</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>ADOBE ILLUSTRATOR</span>
-              <span className="text-blue-dark">&#9671;</span>
-              <span>GRAPHIC DESIGN</span>
-              <span className="text-blue-dark">&#9671;</span>
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ━━━ ABOUT ━━━ */}
-      <section id="about" className="relative mx-auto max-w-5xl px-10 py-28">
+      <section id="about" className="relative mx-auto max-w-5xl px-10 pt-40 pb-28">
 
         <SectionTag color="purple">About Me</SectionTag>
         <h2

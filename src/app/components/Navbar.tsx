@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white/90 backdrop-blur-md fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full border-2 border-blue-light  transition-all duration-500 ${
+      className={`bg-white/90 backdrop-blur-md fixed left-1/2 top-7 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full border-2 border-blue-light  transition-all duration-500 ${
         visible
           ? "scale-100 opacity-100"
           : "scale-95 opacity-0 pointer-events-none"
