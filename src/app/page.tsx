@@ -84,7 +84,6 @@ export default function Home() {
         id="hero"
         className="relative flex min-h-screen flex-col overflow-hidden bg-background"
       >
-
         {/* Pastel blurs */}
         <div className="pointer-events-none absolute -left-32 -top-20 h-[500px] w-[500px] rounded-full bg-blue-light opacity-70 blur-[120px]" />
         <div className="pointer-events-none absolute -right-40 top-[5%] h-[450px] w-[450px] rounded-full bg-green-light opacity-60 blur-[120px]" />
@@ -129,7 +128,11 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary flex items-center gap-2 text-base"
-              style={{ background: "#D4DFEF", color: "#2D2448", borderColor: "#A5B8E0" }}
+              style={{
+                background: "#D7E5FF",
+                color: "#2D2448",
+                borderColor: "#A5B8E0",
+              }}
             >
               My Resume
             </a>
@@ -177,11 +180,11 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* ━━━ ABOUT ━━━ */}
-      <section id="about" className="relative mx-auto max-w-5xl px-10 pt-40 pb-28">
-
-        <SectionTag color="purple">About Me</SectionTag>
+      <section
+        id="about"
+        className="relative mx-auto max-w-5xl px-10 pt-50 pb-28"
+      >
         <h2
           className="mb-4 max-w-2xl text-4xl font-bold leading-tight text-foreground md:text-5xl"
           style={{ fontFamily: "var(--font-figtree)" }}
@@ -212,8 +215,9 @@ export default function Home() {
                   <strong className="text-purple-dark">
                     empathy, research, and iteration
                   </strong>{" "}
-                  to turn complex problems into seamless experiences.
-                  As a third-year Information Systems student, I continuously grow by applying my knowledge to{" "}
+                  to turn complex problems into seamless experiences. As a
+                  third-year Information Systems student, I continuously grow by
+                  applying my knowledge to{" "}
                   <strong className="text-purple-dark">
                     real-world design challenges
                   </strong>
@@ -227,7 +231,12 @@ export default function Home() {
           <div className="md:col-span-5 md:row-span-2">
             <Card color="pink" className="h-full">
               <div className="relative h-full" style={{ minHeight: "320px" }}>
-                <Image src="/foto-1.png" alt="Aileen Josephine Halim" fill className="object-cover" />
+                <Image
+                  src="/foto-1.png"
+                  alt="Aileen Josephine Halim"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </Card>
           </div>
@@ -277,16 +286,14 @@ export default function Home() {
 
       {/* ━━━ WORKS ━━━ */}
       <section id="projects" className="relative overflow-hidden py-28">
-
         <div className="relative z-10 mx-auto max-w-5xl px-10">
-          <SectionTag color="blue">Works</SectionTag>
           <h2
             className="mb-4 text-4xl font-bold text-foreground md:text-5xl"
             style={{ fontFamily: "var(--font-figtree)" }}
           >
             Design <span className="text-blue">works</span>.
           </h2>
-          <p className="mb-14 max-w-lg text-text-secondary text-lg">
+          <p className="mb-12 max-w-lg text-text-secondary text-lg">
             End-to-end product thinking and visual execution.
           </p>
 
@@ -305,9 +312,19 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="portfolio-btn rounded-full border-2 border-gray-300 bg-white px-5 py-2.5 text-sm font-bold text-foreground transition-all duration-200"
-                style={{ boxShadow: "3px 3px 0 #d1d5db", fontFamily: "var(--font-figtree)" }}
+                style={{
+                  boxShadow: "3px 3px 0 #d1d5db",
+                  fontFamily: "var(--font-figtree)",
+                }}
               >
-                <span className="inline-flex items-center gap-2">View Detailed Portfolio <img src="/ArrowSquareOut.svg" alt="" className="h-[18px] w-[18px] -translate-y-[1px]" /></span>
+                <span className="inline-flex items-center gap-2">
+                  View Detailed Portfolio{" "}
+                  <img
+                    src="/ArrowSquareOut.svg"
+                    alt=""
+                    className="h-[18px] w-[18px] -translate-y-[1px]"
+                  />
+                </span>
               </a>
             }
           >
@@ -665,15 +682,16 @@ export default function Home() {
 
       {/* ━━━ EXPERIENCES ━━━ */}
       <section id="experience" className="relative overflow-hidden py-28">
-
         <div className="relative z-10 mx-auto max-w-5xl px-10">
-          <SectionTag color="pink">Experiences</SectionTag>
           <h2
-            className="mb-14 text-4xl font-bold text-foreground md:text-5xl"
+            className="mb-4 text-4xl font-bold text-foreground md:text-5xl"
             style={{ fontFamily: "var(--font-figtree)" }}
           >
             My <span className="text-pink">journey</span>.
           </h2>
+          <p className="mb-12 max-w-lg text-text-secondary text-lg">
+            Where I&apos;ve been, what I&apos;ve learned, and how I&apos;ve grown.
+          </p>
 
           <Tabs
             tabs={["Career", "Education", "Organization", "Awards"]}
@@ -681,7 +699,13 @@ export default function Home() {
           >
             {/* Career — timeline style with connecting line */}
             <div className="relative space-y-8 pl-12 md:pl-14">
-              <div className="absolute left-[11px] top-4 h-[calc(100%-16px)] w-[3px] rounded-full md:left-[13px]" style={{ background: "linear-gradient(to bottom, var(--green) 0%, var(--green) 40%, var(--pink) 75%, var(--pink) 100%)" }} />
+              <div
+                className="absolute left-[11px] top-4 h-[calc(100%-16px)] w-[3px] rounded-full md:left-[13px]"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, var(--green) 0%, var(--green) 40%, var(--pink) 75%, var(--pink) 100%)",
+                }}
+              />
               {[
                 {
                   company: "PT Paragon Technology",
@@ -723,7 +747,9 @@ export default function Home() {
               ].map((item, idx) => (
                 <div key={item.company} className="relative">
                   <div
-                    className={`absolute -left-7 h-6 w-6 rounded-full border-[3px] border-white ${item.dotColor} md:-left-13.5 ${idx === 0 ? "top-3" : "top-4"}`}
+                    className={`absolute -left-7 h-6 w-6 rounded-full border-[3px] border-white ${
+                      item.dotColor
+                    } md:-left-13.5 ${idx === 0 ? "top-3" : "top-4"}`}
                     style={{ boxShadow: "0 0 0 2px var(--purple-light)" }}
                   />
                   <Card color={item.color}>
@@ -793,7 +819,13 @@ export default function Home() {
                       className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white border-2 border-blue-light overflow-hidden"
                       style={{ boxShadow: "3px 3px 0 var(--blue-light)" }}
                     >
-                      <Image src="/logo-ui.png" alt="Universitas Indonesia" width={36} height={36} className="object-contain" />
+                      <Image
+                        src="/logo-ui.png"
+                        alt="Universitas Indonesia"
+                        width={36}
+                        height={36}
+                        className="object-contain"
+                      />
                     </div>
                     <div>
                       <h3
@@ -1044,7 +1076,10 @@ export default function Home() {
                     color: "purple",
                     desc: "Designed Agrify, an AI and IoT powered mobile app tackling 50% post-harvest loss by enabling real-time produce grading, waste-to-value integration, and data-driven farming—earning national recognition for its impact on sustainable agriculture.",
                     img: IMG.projectAgrify,
-                    slideshow: ["/award-techfest-1.jpeg", "/award-techfest-2.jpeg"],
+                    slideshow: [
+                      "/award-techfest-1.jpeg",
+                      "/award-techfest-2.jpeg",
+                    ],
                   },
                   {
                     place: "1st",
@@ -1071,7 +1106,10 @@ export default function Home() {
                     color: "blue",
                     desc: "Designed WattWallet, a mobile app that helps households cut electricity waste through real-time IoT monitoring, AI-based bill prediction, and reward-driven behavioral nudges—enabling users to lower costs while supporting sustainable energy use.",
                     img: "/award-portal7-1.jpeg",
-                    slideshow: ["/award-portal7-1.jpeg", "/award-portal7-2.jpeg"],
+                    slideshow: [
+                      "/award-portal7-1.jpeg",
+                      "/award-portal7-2.jpeg",
+                    ],
                   },
                   {
                     place: "1st Runner Up",
@@ -1081,7 +1119,10 @@ export default function Home() {
                     color: "green",
                     desc: "Led the user interface design for BinaGuru, an AI-powered platform developed during a hackathon to support teachers in remote regions through low-connectivity, automated training, and collaborative learning—helping the team secure 1st Runner Up nationally.",
                     img: "/award-hackathon-1.png",
-                    slideshow: ["/award-hackathon-1.png", "/award-hackathon-2.jpeg"],
+                    slideshow: [
+                      "/award-hackathon-1.png",
+                      "/award-hackathon-2.jpeg",
+                    ],
                   },
                   {
                     place: "2nd",
@@ -1103,8 +1144,10 @@ export default function Home() {
       </section>
 
       {/* ━━━ CONTACT ━━━ */}
-      <section id="contact" className="relative mx-auto max-w-5xl px-10 pt-28 pb-44">
-
+      <section
+        id="contact"
+        className="relative mx-auto max-w-5xl px-10 pt-28 pb-55"
+      >
         <div
           className="bg-white border-2 border-green-light overflow-hidden transition-all duration-300"
           style={{
@@ -1120,7 +1163,6 @@ export default function Home() {
             <div className="pointer-events-none absolute right-[20%] top-[5%] h-[200px] w-[200px] rounded-full bg-purple-light opacity-50 blur-[90px]" />
             <div className="pointer-events-none absolute left-[50%] bottom-[10%] h-[250px] w-[250px] rounded-full bg-yellow-light opacity-50 blur-[100px]" />
             <div className="relative z-10">
-              <SectionTag color="green">Get in Touch</SectionTag>
               <h2
                 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl"
                 style={{ fontFamily: "var(--font-figtree)" }}
@@ -1135,12 +1177,12 @@ export default function Home() {
               <div className="mx-auto flex gap-6 max-w-4xl [&>a]:w-1/2">
                 <a
                   href="mailto:aileenjeha@gmail.com"
-                  className="flex items-center gap-4 text-left px-6 py-6 w-full bg-white rounded-2xl border-2 border-green-light transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_var(--green-light)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_var(--green-light)]"
-                  style={{ boxShadow: "5px 5px 0 var(--green-light)" }}
+                  className="flex items-center gap-4 text-left px-6 py-6 w-full bg-white rounded-2xl border-2 border-blue-light transition-all duration-200 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0_var(--blue-light)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_var(--blue-light)]"
+                  style={{ boxShadow: "5px 5px 0 var(--blue-light)" }}
                 >
                   <div
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green-soft border-2 border-green-light"
-                    style={{ boxShadow: "2px 2px 0 var(--green-light)" }}
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-soft border-2 border-blue-light"
+                    style={{ boxShadow: "2px 2px 0 var(--blue-light)" }}
                   >
                     <IconMail />
                   </div>
@@ -1188,10 +1230,18 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 rounded-full border-2 border-blue-light overflow-hidden flex-shrink-0">
-                <img src="/foto-1.png" alt="Aileen" className="h-full w-full object-cover scale-[2]" style={{ objectPosition: "20% 1%" }} />
+                <img
+                  src="/foto-1.png"
+                  alt="Aileen"
+                  className="h-full w-full object-cover scale-[2]"
+                  style={{ objectPosition: "20% 1%" }}
+                />
               </div>
               <div>
-                <p className="text-base font-bold text-blue" style={{ fontFamily: "var(--font-figtree)" }}>
+                <p
+                  className="text-base font-bold text-blue"
+                  style={{ fontFamily: "var(--font-figtree)" }}
+                >
                   Aileen Josephine Halim
                 </p>
                 <p className="text-xs text-text-secondary">UI/UX Designer</p>
@@ -1238,7 +1288,10 @@ export default function Home() {
                 </a>
               ))}
             </div>
-            <p className="text-sm text-text-muted" style={{ fontFamily: "var(--font-figtree)" }}>
+            <p
+              className="text-sm text-text-muted"
+              style={{ fontFamily: "var(--font-figtree)" }}
+            >
               &copy; 2026 Aileen Josephine Halim
             </p>
           </div>
